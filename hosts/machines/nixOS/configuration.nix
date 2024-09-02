@@ -19,55 +19,59 @@
     networkmanager.enable = true;
   };
 
+  services.xserver.videoDrivers = ["nvidia"];
+
   # Enable sound with pipewire.
   hardware = {
     pulseaudio.enable = false;
 
-    # nvidia = {
-    #   # Modesetting is required.
-    #   modesetting.enable = true;
+    nvidia = {
+      # Modesetting is required.
+      modesetting.enable = true;
 
-    #   # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    #   powerManagement = {
-    #     enable = false;
-    #     # Fine-grained power management. Turns off GPU when not in use.
-    #     finegrained = false;
-    #   };
+      # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+      powerManagement = {
+        enable = false;
+        # Fine-grained power management. Turns off GPU when not in use.
+        finegrained = false;
+      };
 
-    #   prime = {
-    #     sync.enable = true;
-    #     # Make sure to use the correct Bus ID values for your system!
-    #     nvidiaBusId = "PCI:01:0:0";
-    #     amdgpuBusId = "PCI:06:0:0";
-    #   };
+      prime = {
+        sync.enable = true;
+        # Make sure to use the correct Bus ID values for your system!
+        nvidiaBusId = "PCI:01:0:0";
+        amdgpuBusId = "PCI:06:0:0";
+      };
 
-    #   # Use the NVidia open source kernel module (not to be confused with the
-    #   # independent third-party "nouveau" open source driver).
-    #   # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    #   open = false;
+      # Use the NVidia open source kernel module (not to be confused with the
+      # independent third-party "nouveau" open source driver).
+      # Currently alpha-quality/buggy, so false is currently the recommended setting.
+      open = false;
 
-    #   # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
-    #   nvidiaSettings = true;
+      # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
+      nvidiaSettings = true;
 
-    #   # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    #   package = config.boot.kernelPackages.nvidiaPackages.stable;
-    # };
+      # Optionally, you may need to select the appropriate driver version for your specific GPU.
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
   };
 
+  # Enable qtile. Kinda fucky rn, fixing it, use kde meanwhile.
+  # kde.enable = true;
   qtile.enable = true;
 
   security.rtkit.enable = true;
 
-  # specialisation = {
-  #   on-the-go.configuration = {
-  #     system.nixos.tags = [ "on-the-go" ];
-  #     hardware.nvidia = {
-  #       prime.offload.enable = lib.mkForce true;
-  #       prime.offload.enableOffloadCmd = lib.mkForce true;
-  #       prime.sync.enable = lib.mkForce false;
-  #     };
-  #   };
-  # };
+  specialisation = {
+    on-the-go.configuration = {
+      system.nixos.tags = [ "on-the-go" ];
+      hardware.nvidia = {
+        prime.offload.enable = lib.mkForce true;
+        prime.offload.enableOffloadCmd = lib.mkForce true;
+        prime.sync.enable = lib.mkForce false;
+      };
+    };
+  };
 
   # User accounts
   users.users.hoarfrost = {

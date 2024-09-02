@@ -1,39 +1,30 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
 {
+  config,
+  lib,
+  ...
+}:
+with lib; {
   options = {
-    qtile = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-      };
+    qtile.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable Qtile WM";
     };
   };
 
-  config = mkIf (config.qtile.enable) {
+  config = mkIf config.qtile.enable {
+    x11.enable = true;
 
-    nixpkgs.overlays = [
-    (self: super: {
-        qtile-unwrapped = super.qtile-unwrapped.overrideAttrs(_: rec {
-        postInstall = let
-            qtileSession = ''
-            [Desktop Entry]
-            Name=Qtile Wayland
-            Comment=Qtile on Wayland
-            Exec=qtile start -b wayland
-            Type=Application
-            '';
-            in
-            ''
-        mkdir -p $out/share/wayland-sessions
-        echo "${qtileSession}" > $out/share/wayland-sessions/qtile.desktop
-        '';
-        passthru.providedSessions = [ "qtile" ];
-        });
-    })
-    ];
+    services.xserver.windowManager.qtile = {
+      enable = true;
+      backend = "x11";
+      extraPackages = p: with p; [qtile-extras];
+    };
 
-    services.xserver.displayManager.sessionPackages = [ pkgs.qtile-unwrapped ];
+    # Enable sddm.
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = false;
+    };
   };
 }
