@@ -8,10 +8,13 @@
         normal.family = "Jetbrains Mono";
         size = 13;
       };
-    };
-
-    home.file = {
-      ".config/alacritty/alacritty.toml".source = ./alacritty.toml;
+      window = {
+        opacity = 0.6;
+        padding = {
+          x = 10;
+          y = 10;
+        };
+      };
     };
   };
 }
