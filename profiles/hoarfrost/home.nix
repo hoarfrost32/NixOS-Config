@@ -17,7 +17,6 @@
     zed-editor
     git
     python3
-    postman
     hyperion-ng
     racket
     sioyek
@@ -25,6 +24,7 @@
     neofetch
     ntfs3g
     thunderbird
+    hoppscotch
   ];
 
   programs.git = {
