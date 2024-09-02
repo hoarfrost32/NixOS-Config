@@ -9,6 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/desktops
     ];
 
   # Networking.
@@ -16,25 +17,6 @@
     hostName = "nixos"; # Define your hostname.
     # Enable networking
     networkmanager.enable = true;
-  };
-
-  services = {
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    xserver = {
-      enable = true;
-      # videoDrivers = ["nvidia"];
-      # Configure Keymap
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-
-    # Enable the KDE Plasma Desktop Environment.
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
-
   };
 
   # Enable sound with pipewire.
@@ -71,6 +53,8 @@
     #   package = config.boot.kernelPackages.nvidiaPackages.stable;
     # };
   };
+
+  kde.enable = true;
 
   security.rtkit.enable = true;
 
