@@ -54,7 +54,7 @@
     # };
   };
 
-  kde.enable = true;
+  qtile.enable = true;
 
   security.rtkit.enable = true;
 
