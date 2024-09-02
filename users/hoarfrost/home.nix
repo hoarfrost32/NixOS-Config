@@ -6,7 +6,7 @@
 
     # Select your modules.
   imports = [
-    ../modules/alacritty.nix
+    ../modules/Alacritty/alacritty.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
