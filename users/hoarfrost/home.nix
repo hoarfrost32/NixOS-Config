@@ -4,6 +4,10 @@
   home.username = "hoarfrost";
   home.homeDirectory = "/home/hoarfrost";
 
+    # Select your modules.
+  imports = [
+    ../modules/alacritty.nix
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. You should not change this value, even if you update Home Manager.
@@ -23,18 +27,19 @@
     expressvpn
     neofetch
     ntfs3g
-    thunderbird
     hoppscotch
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "hoarfrost32";
-    userEmail = "aditya.tejpaul@research.iiit.ac.in";
-    extraConfig = {
-      credential.helper = "${
-        pkgs.git.override { withLibsecret = true; }
-      }/bin/git-credential-libsecret";
+  programs = {
+    git = {
+      enable = true;
+      userName = "hoarfrost32";
+      userEmail = "aditya.tejpaul@research.iiit.ac.in";
+      extraConfig = {
+        credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+      };
     };
   };
 
@@ -71,6 +76,7 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+#     TERMINAL = "alacritty";
   };
 
   # Let Home Manager install and manage itself.

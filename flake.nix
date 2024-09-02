@@ -24,7 +24,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = inputs;
-            home-manager.users.hoarfrost = import ./profiles/hoarfrost/home.nix;
+            home-manager.users.hoarfrost = import ./users/hoarfrost/home.nix;
           }
         ];
       };
