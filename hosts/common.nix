@@ -28,13 +28,15 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget
-    vim
+    wget vim
   ];
 
   services = {
     # Enable CUPS to print documents.
     printing.enable = true;
+
+    # Enable bluetooth.
+    blueman.enable = true;
 
     # Enable sound with pipewire.
     pipewire = {
