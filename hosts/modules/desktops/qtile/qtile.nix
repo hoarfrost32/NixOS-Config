@@ -17,14 +17,14 @@ with lib; {
 
     services.xserver.windowManager.qtile = {
       enable = true;
-      backend = "x11";
+      # backend = "x11";
       extraPackages = p: with p; [qtile-extras];
     };
 
-    # Enable sddm.
-    services.displayManager.sddm = {
+    # Enable lightdm.
+    services.xserver.displayManager.lightdm.greeters.slick = {
       enable = true;
-      wayland.enable = false;
+#       wayland.enable = false;
     };
   };
 }

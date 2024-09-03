@@ -83,20 +83,22 @@
 
   # Fonts
   fonts.packages = with pkgs; [
-    carlito # NixOS
-    vegur # NixOS
-    source-code-pro
+#     carlito # NixOS
+#     vegur # NixOS
+#     source-code-pro
     jetbrains-mono
     font-awesome # Icons
-    corefonts # MS
+#     corefonts # MS
     noto-fonts # Google + Unicode
     noto-fonts-cjk
     noto-fonts-emoji
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-      ];
-    })
+    nerdfonts
+    fira-code-nerdfont
+#     (nerdfonts.override {
+#       fonts = [
+#         "FiraCode"
+#       ];
+#     })
   ];
 
   # Install firefox and fish

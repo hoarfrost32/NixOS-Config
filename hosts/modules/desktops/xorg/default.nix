@@ -20,10 +20,5 @@ with lib; {
         layout = "us";
       };
     };
-
-    services.picom = {
-      enable = true;
-      vSync = true;
-    };
   };
 }

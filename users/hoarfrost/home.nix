@@ -7,6 +7,7 @@
   # Import all needed modules.
   imports = [
     ../modules/Alacritty/alacritty.nix
+    ../modules/Picom/picom.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -16,7 +17,7 @@
   # Packages I want installed.
   home.packages = with pkgs; [
     hello
-    kdePackages.kate
+    sublimeq
     zed-editor
     git
     python3
@@ -27,6 +28,18 @@
     neofetch
     ntfs3g
     hoppscotch
+    nitrogen
+    xfce.thunar
+    telegram-desktop
+    alsa-utils
+    playerctl
+    flameshot
+    networkmanagerapplet
+    dunst
+    thunderbird
+    ranger
+    tmux
+    dmenu
   ];
 
   programs = {
