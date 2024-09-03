@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
     let
       system = "x86_64-linux";
     in
@@ -18,7 +20,7 @@
       nixosConfigurations.nixOS = nixpkgs.lib.nixosSystem {
         modules = [
           (import ./hosts { system = "nixOS"; })
-
+          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

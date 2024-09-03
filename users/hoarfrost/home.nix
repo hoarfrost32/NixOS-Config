@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "hoarfrost";
@@ -8,6 +8,7 @@
   imports = [
     ../modules/Alacritty/alacritty.nix
     ../modules/Picom/picom.nix
+    (import ../modules/GTK/gtk.nix { inherit inputs; })
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -17,7 +18,7 @@
   # Packages I want installed.
   home.packages = with pkgs; [
     hello
-    sublimeq
+    sublime
     zed-editor
     git
     python3

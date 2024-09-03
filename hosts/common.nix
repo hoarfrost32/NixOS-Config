@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
 
   # Bootloader.
@@ -28,8 +28,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget vim
+    wget vim ksshaskpass
   ];
+
+  environment.variables = {
+    SSH_ASKPASS = lib.mkForce "${pkgs.ksshaskpass}/libexec/ksshaskpass";
+  };
 
   services = {
     # Enable CUPS to print documents.
