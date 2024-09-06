@@ -9,6 +9,7 @@
     ../modules/Alacritty/alacritty.nix
     ../modules/Picom/picom.nix
     ../modules/GTK/gtk.nix
+    ../modules/Fish/fish.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -46,6 +47,9 @@
     lapce
     nil
     x11_ssh_askpass
+    gnome-keyring
+    rofi
+    killall
   ];
 
   programs = {
@@ -58,6 +62,12 @@
           pkgs.git.override { withLibsecret = true; }
         }/bin/git-credential-libsecret";
       };
+    };
+    
+    direnv = {
+      enable = true;
+      # enableFishIntegration = true; 
+      nix-direnv.enable = true;
     };
   };
   
@@ -75,7 +85,8 @@
   # Manage environment variables. These will be explicitly sourced when using a
   # shell provided by Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "lapce";
+    SHELL = "fish";
     TERMINAL = "alacritty";
   };
 

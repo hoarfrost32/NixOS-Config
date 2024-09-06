@@ -18,8 +18,12 @@ with lib; {
     };
 
     # Enable lightdm.
-    services.xserver.displayManager.lightdm.greeters.slick = {
+    services.xserver.displayManager.lightdm = {
       enable = true;
+      background = "/etc/lightdm/Wallpapers/scottpilgrim.jpg";
+      greeters.slick = {
+        enable = true;
+      };
     };
   };
 }
