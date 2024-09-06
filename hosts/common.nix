@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, lib, ... }:
 {
 
   # Bootloader.
@@ -28,18 +28,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget vim ksshaskpass
+    wget vim dconf
   ];
 
-  environment.variables = {
-    SSH_ASKPASS = lib.mkForce "${pkgs.ksshaskpass}/libexec/ksshaskpass";
-  };
+  # environment.etc."/fonts/fonts.conf".source = /home/hoarfrost/.config/fontconfig/fonts.conf;
 
   services = {
     # Enable CUPS to print documents.
     printing.enable = true;
 
-    # Enable bluetooth.
+    # Enable blueman.
     blueman.enable = true;
 
     # Enable sound with pipewire.

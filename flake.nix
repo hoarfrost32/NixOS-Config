@@ -12,21 +12,22 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
-    let
-      system = "x86_64-linux";
-    in
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }:
     {
       nixosConfigurations.nixOS = nixpkgs.lib.nixosSystem {
         modules = [
           (import ./hosts { system = "nixOS"; })
-          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.users.hoarfrost = import ./users/hoarfrost/home.nix;
+            home-manager.users.hoarfrost = {
+              imports = [ 
+                ./users/hoarfrost/home.nix
+                catppuccin.homeManagerModules.catppuccin
+              ];
+            };
+            home-manager.backupFileExtension = ".bak";
           }
         ];
       };

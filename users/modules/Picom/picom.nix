@@ -1,22 +1,26 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   services.picom = {
     enable = true;
-    backend = "glx";
-    activeOpacity = 0.95;
-    inactiveOpacity = 0.92;
+    backend = "glx";                # Set Backend
     vSync = true;
-    shadow = true;
-    fade = true;
-    fadeDelta = 3;
-    settings = {
-      blur = { 
+    activeOpacity = 0.95;           # Opacity Rules
+    inactiveOpacity = 0.92;
+    opacityRules = [                
+      "100:name *?= 'Firefox'"
+    ];    
+    shadow = true;                  # Set Shadows
+    fade = true;                    # Fade-in/out windows
+    fadeDelta = 3;  
+    settings = {                    # Extra Settings
+      blur = {                      # Blur
         method = "gaussian";
         size = 10;
         deviation = 5.0;
       };
-      corner-radius = 8;    
+      use-damage = false;           # Helps w tearing apparently
+      corner-radius = 8;            # Rounded Corners
     };
   };
 }

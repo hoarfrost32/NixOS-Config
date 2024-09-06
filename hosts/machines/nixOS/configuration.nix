@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
@@ -24,6 +24,12 @@
   # Enable sound with pipewire.
   hardware = {
     pulseaudio.enable = false;
+    pulseaudio.support32Bit = true;
+
+    bluetooth.enable = true;
+
+    graphics.enable32Bit = true;
+    graphics.enable = true;
 
     nvidia = {
       # Modesetting is required.
@@ -81,24 +87,21 @@
     shell = pkgs.fish;
   };
 
-  # Fonts
   fonts.packages = with pkgs; [
-#     carlito # NixOS
-#     vegur # NixOS
-#     source-code-pro
+    carlito # NixOS
+    vegur # NixOS
+    source-code-pro
     jetbrains-mono
     font-awesome # Icons
-#     corefonts # MS
+    corefonts # MS
     noto-fonts # Google + Unicode
     noto-fonts-cjk
     noto-fonts-emoji
-    nerdfonts
-    fira-code-nerdfont
-#     (nerdfonts.override {
-#       fonts = [
-#         "FiraCode"
-#       ];
-#     })
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+      ];
+    })
   ];
 
   # Install firefox and fish

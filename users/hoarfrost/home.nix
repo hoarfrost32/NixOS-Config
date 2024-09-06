@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "hoarfrost";
@@ -8,7 +8,7 @@
   imports = [
     ../modules/Alacritty/alacritty.nix
     ../modules/Picom/picom.nix
-    (import ../modules/GTK/gtk.nix { inherit inputs; })
+    ../modules/GTK/gtk.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -41,6 +41,11 @@
     ranger
     tmux
     dmenu
+    zip
+    unzip
+    lapce
+    nil
+    x11_ssh_askpass
   ];
 
   programs = {
@@ -53,6 +58,17 @@
           pkgs.git.override { withLibsecret = true; }
         }/bin/git-credential-libsecret";
       };
+    };
+  };
+  
+  catppuccin = {
+    flavor = "mocha";
+    enable = true;
+    accent = "lavender";
+    pointerCursor = {
+      enable = true;
+      accent = "lavender";
+      flavor = "mocha";
     };
   };
 

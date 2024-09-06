@@ -1,9 +1,11 @@
-{config, pkgs, inputs, ...}: {
-  imports = [inputs.catppuccin.homeManagerModules.catppuccin];
+{ ... }:
+
+{
   gtk = {
     enable = true;
     catppuccin = {
       enable = true;
+      icon.enable = true;
       flavor = "mocha";
       accent = "lavender";
       size = "standard";
