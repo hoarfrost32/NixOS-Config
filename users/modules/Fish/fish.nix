@@ -29,6 +29,9 @@
       #Fish stuff
       activate = "source .venv/bin/activate.fish";
       
+      #direnv
+      usenix = ''echo "use nix" >> .envrc && direnv allow'';
+      
       # nix aliases
       rebuild = "sudo nixos-rebuild switch --flake .#nixOS --impure";
       nixgc="sudo nix-collect-garbage -d";        
