@@ -31,7 +31,20 @@
     wget vim dconf
   ];
 
-  # environment.etc."/fonts/fonts.conf".source = /home/hoarfrost/.config/fontconfig/fonts.conf;
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 2d";
+    };
+    # package = pkgs.nixVersions.latest;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   services = {
     # Enable CUPS to print documents.

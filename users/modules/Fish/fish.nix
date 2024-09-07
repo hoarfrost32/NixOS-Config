@@ -28,6 +28,8 @@
       
       #Fish stuff
       activate = "source .venv/bin/activate.fish";
+      refresh = "xrandr --output DP-2 --mode 2560x1440 --refresh";
+      position = "xrandr --output eDP-1-1 --mode 1920x1080 --pos 2560x180";
       
       #direnv
       usenix = ''echo "use nix" >> .envrc && direnv allow'';

@@ -10,7 +10,7 @@
     opacityRules = [                
       "100:name *?= 'Firefox'"
       "100:name *?= 'mpv'"
-      "100:name *?= 'VLC'"
+      "100:name *?= 'VLC media player'"
     ];    
     shadow = true;                  # Set Shadows
     fade = true;                    # Fade-in/out windows
@@ -21,7 +21,8 @@
         size = 10;
         deviation = 5.0;
       };
-      use-damage = false;           # Helps w tearing apparently
+      settings.vsync-use-glfinish = true;                 # Vsync
+      use-damage = false;           # Helps w flickering apparently
       corner-radius = 8;            # Rounded Corners
     };
   };
