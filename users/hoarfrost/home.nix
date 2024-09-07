@@ -26,7 +26,6 @@
     hyperion-ng
     racket
     sioyek
-    expressvpn
     neofetch
     ntfs3g
     hoppscotch
@@ -50,6 +49,15 @@
     gnome-keyring
     rofi
     killall
+    nodejs_22
+    python312Packages.python-lsp-server
+    qbittorrent
+    cowsay
+    sl 
+    mpv
+    vlc
+    lsd
+    btop
   ];
 
   programs = {
@@ -66,7 +74,6 @@
     
     direnv = {
       enable = true;
-      # enableFishIntegration = true; 
       nix-direnv.enable = true;
     };
   };

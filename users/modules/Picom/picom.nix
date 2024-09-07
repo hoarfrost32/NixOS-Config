@@ -9,6 +9,8 @@
     inactiveOpacity = 0.92;
     opacityRules = [                
       "100:name *?= 'Firefox'"
+      "100:name *?= 'mpv'"
+      "100:name *?= 'VLC'"
     ];    
     shadow = true;                  # Set Shadows
     fade = true;                    # Fade-in/out windows

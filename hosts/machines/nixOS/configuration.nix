@@ -20,6 +20,7 @@
   };
 
   services.xserver.videoDrivers = ["nvidia"];
+  services.expressvpn.enable = true;
 
   # Enable sound with pipewire.
   hardware = {
@@ -117,6 +118,11 @@
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
   };
+  
+  # Install expressvpn. 
+  environment.systemPackages = with pkgs; [
+    expressvpn
+  ];
 
   # programs.gnupg.agent = {
   #   enable = true;
