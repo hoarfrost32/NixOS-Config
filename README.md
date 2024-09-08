@@ -1,5 +1,11 @@
 # NixOS Configuration
 
+Took inspiration from quite a few configurations, but especially the two below:
+
+* [Matthias Benaets' Config](https://github.com/MatthiasBenaets/nix-config)
+* [Mitchellh's Config](https://github.com/mitchellh/nixos-config)
+
+
 ```
 .
 ├── flake.lock                                            
