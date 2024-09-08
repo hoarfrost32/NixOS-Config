@@ -52,7 +52,8 @@
     nodejs_22
     python312Packages.python-lsp-server
     qbittorrent
-    cowsay
+    kittysay
+    fortune
     sl 
     mpv
     vlc

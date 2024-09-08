@@ -30,6 +30,7 @@
       activate = "source .venv/bin/activate.fish";
       refresh = "xrandr --output DP-2 --mode 2560x1440 --refresh";
       position = "xrandr --output eDP-1-1 --mode 1920x1080 --pos 2560x180";
+      cowsay = "kittysay";
       
       #direnv
       usenix = ''echo "use nix" >> .envrc && direnv allow'';
@@ -42,5 +43,9 @@
       nix-shell = "nix-shell --run fish";
       envpkgs = "nix-env -q";
     };
+    
+    shellInit = ''
+      fortune | kittysay
+    '';
   };
 }
