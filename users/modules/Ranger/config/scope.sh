@@ -100,6 +100,10 @@ handle_extension() {
             ## Uses: https://github.com/dilshod/xlsx2csv
             xlsx2csv -- "${FILE_PATH}" && exit 5
             exit 1;;
+            
+        # Markdown files
+        markdown|md)
+            mdcat "${FILE_PATH}" && exit 5;;
 
         ## HTML
         htm|html|xhtml)

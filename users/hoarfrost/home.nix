@@ -62,6 +62,8 @@
     mediainfo
     xdragon
     mdcat
+    highlight
+    poppler_utils
   ];
 
   programs = {
