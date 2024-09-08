@@ -1,5 +1,6 @@
 # NixOS Configuration
 
+```
 .
 ├── flake.lock                                            
 ├── flake.nix
@@ -38,3 +39,4 @@
         │   └── ranger.nix
         └── Rofi                                              # Rofi
             └── rofi.nix
+```
