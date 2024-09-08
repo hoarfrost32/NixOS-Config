@@ -12,6 +12,7 @@
     ../modules/Fish/fish.nix
     ../modules/Ranger/ranger.nix
     ../modules/Rofi/rofi.nix
+    ../modules/Dunst/dunst.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -38,7 +39,6 @@
     playerctl
     flameshot
     networkmanagerapplet
-    dunst
     thunderbird
     tmux
     dmenu
