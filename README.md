@@ -43,8 +43,6 @@ Pictures of my system are on my [Qtile config's](https://github.com/hoarfrost32/
         ├── Picom                                             # Picom
         │   └── picom.nix
         ├── Ranger                                            # Ranger
-        │   ├── config
-        │   │   └── scope.sh
         │   └── ranger.nix
         └── Rofi                                              # Rofi
             └── rofi.nix
