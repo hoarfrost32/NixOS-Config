@@ -10,6 +10,8 @@
     ../modules/Picom/picom.nix
     ../modules/GTK/gtk.nix
     ../modules/Fish/fish.nix
+    ../modules/Ranger/ranger.nix
+    ../modules/Rofi/rofi.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -38,7 +40,6 @@
     networkmanagerapplet
     dunst
     thunderbird
-    ranger
     tmux
     dmenu
     zip
@@ -47,7 +48,6 @@
     nil
     x11_ssh_askpass
     gnome-keyring
-    rofi
     killall
     nodejs_22
     python312Packages.python-lsp-server
