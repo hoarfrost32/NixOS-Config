@@ -58,6 +58,10 @@
     vlc
     lsd
     btop
+    ueberzugpp
+    mediainfo
+    xdragon
+    mdcat
   ];
 
   programs = {
