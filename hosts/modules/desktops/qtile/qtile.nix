@@ -1,5 +1,15 @@
 { config, lib, pkgs,... }:
 
+let
+  
+  displaySetup = pkgs.writeShellApplication {
+    name = "setup";
+    text = ''
+      ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --mode 2560x1440 --rate 165 --primary
+      ${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1-1 --mode 1920x1080 --right-of DP-2
+    '';
+  };
+in
 with lib; {
   options = {
     qtile.enable = lib.mkOption {
@@ -26,7 +36,7 @@ with lib; {
           enable = true;
         };
         extraSeatDefaults = '' 
-          display-setup-script=/home/hoarfrost/.xrandr-setup.sh
+          display-setup-script=${displaySetup}/bin/setup
         '';
       };
     };
