@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs,... }:
 
 with lib; {
   options = {
@@ -18,11 +18,16 @@ with lib; {
     };
 
     # Enable lightdm.
-    services.xserver.displayManager.lightdm = {
-      enable = true;
-      background = "/etc/lightdm/Wallpapers/scottpilgrim.jpg";
-      greeters.slick = {
+    services.xserver.displayManager = {
+      lightdm = {
         enable = true;
+        background = "/etc/lightdm/Wallpapers/scottpilgrim.jpg";
+        greeters.slick = {
+          enable = true;
+        };
+        extraSeatDefaults = '' 
+          display-setup-script=/home/hoarfrost/.xrandr-setup.sh
+        '';
       };
     };
   };
