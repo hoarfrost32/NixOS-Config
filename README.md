@@ -23,10 +23,12 @@
 ├── README.md
 └── users                                                     # User configurations are stored here
     ├── hoarfrost                                             # This is me. 
-    │   └── home.nix                                          # My home-manager configuration
+    │   └── home.nix                                          
     └── modules                                               # Modules for the users
         ├── Alacritty                                         # Alacritty
         │   └── alacritty.nix
+        ├── Dunst                                             # Dunst
+        │   └── dunst.nix
         ├── Fish                                              # Fish
         │   └── fish.nix
         ├── GTK                                               # GTK
