@@ -5,15 +5,7 @@
   home.homeDirectory = "/home/hoarfrost";
 
   # Import all needed modules.
-  imports = [
-    ../modules/Alacritty/alacritty.nix
-    ../modules/Picom/picom.nix
-    ../modules/GTK/gtk.nix
-    ../modules/Fish/fish.nix
-    ../modules/Ranger/ranger.nix
-    ../modules/Rofi/rofi.nix
-    ../modules/Dunst/dunst.nix
-  ];
+  imports = (../modules);
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. You should not change this value, even if you update Home Manager.
@@ -65,6 +57,7 @@
     mdcat
     highlight
     poppler_utils
+    zed-editor
   ];
 
   programs = {

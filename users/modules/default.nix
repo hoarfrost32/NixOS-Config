@@ -1,0 +1,10 @@
+[
+    ./Alacritty/alacritty.nix
+    ./Picom/picom.nix
+    ./GTK/gtk.nix
+    ./Fish/fish.nix
+    ./Ranger/ranger.nix
+    ./Rofi/rofi.nix
+    ./Dunst/dunst.nix
+    ./Editors/Emacs/emacs.nix
+]
