@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/hoarfrost";
 
   # Import all needed modules.
-  imports = (../modules);
+  imports = (import ../modules);
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. You should not change this value, even if you update Home Manager.
