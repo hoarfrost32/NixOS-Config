@@ -31,6 +31,9 @@
       refresh = "xrandr --output DP-2 --mode 2560x1440 --refresh";
       position = "xrandr --output eDP-1-1 --mode 1920x1080 --pos 2560x180";
       
+      # DOOM
+      doom = "~/.emacs.d/bin/doom";
+      
       #direnv
       usenix = ''echo "use nix" >> .envrc && direnv allow'';
       
@@ -44,7 +47,7 @@
     };
     
     shellInit = ''
-      fortune | cowsay
+      shuf -n 1 ~/.fortune.txt | cowsay -r
     '';
   };
 }

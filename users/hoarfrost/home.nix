@@ -58,6 +58,12 @@
     highlight
     poppler_utils
     zed-editor
+    ripgrep
+    coreutils
+    fd
+    pandoc
+    shellcheck
+    discord
   ];
 
   programs = {
@@ -92,7 +98,7 @@
   # Manage environment variables. These will be explicitly sourced when using a
   # shell provided by Home Manager.
   home.sessionVariables = {
-    EDITOR = "lapce";
+    EDITOR = "emacs";
     SHELL = "fish";
     TERMINAL = "alacritty";
   };
