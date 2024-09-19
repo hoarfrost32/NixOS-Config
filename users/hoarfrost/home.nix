@@ -63,8 +63,16 @@
     fd
     pandoc
     shellcheck
-    discord
-  ];
+    zapzap
+    whatsapp-for-linux
+    ollama
+    cmake
+    gcc
+    copyq
+  ] ++
+  [(pkgs.discord.override {
+    withVencord = true;
+  })];
 
   programs = {
     git = {

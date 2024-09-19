@@ -1,12 +1,20 @@
-{ ... }:
+{ config, lib, ... }:
 
+with lib;
 {
+  options.picom.enable = mkOption {
+    type = types.bool;
+    default = true;
+    description = "Enable or Disable Picom Service";
+  };
+
+  config = mkIf config.picom.enable {
   services.picom = {
-    enable = true;
+    enable = false;
     backend = "glx";                # Set Backend
     vSync = true;
-    activeOpacity = 0.95;           # Opacity Rules
-    inactiveOpacity = 0.92;
+    activeOpacity = 0.98;           # Opacity Rules
+    inactiveOpacity = 0.96;
     opacityRules = [                
       "100:name *?= 'Firefox'"
       "100:name *?= 'mpv'"
@@ -25,5 +33,6 @@
       use-damage = false;           # Helps w flickering apparently
       corner-radius = 8;            # Rounded Corners
     };
+  };
   };
 }
