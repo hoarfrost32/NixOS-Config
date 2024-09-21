@@ -7,4 +7,5 @@
     ./Rofi/rofi.nix
     ./Dunst/dunst.nix
     ./Editors/Emacs/emacs.nix
+    ./Editors/Sublime/sublime.nix
 ]

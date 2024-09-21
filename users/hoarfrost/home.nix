@@ -14,8 +14,6 @@
   # Packages I want installed.
   home.packages = with pkgs; [
     hello
-    sublime
-    zed-editor
     git
     python3
     hyperion-ng
@@ -68,7 +66,7 @@
     ollama
     cmake
     gcc
-    copyq
+    parcellite
   ] ++
   [(pkgs.discord.override {
     withVencord = true;

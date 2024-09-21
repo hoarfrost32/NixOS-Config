@@ -7,6 +7,9 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
 
   # Set time zone.
   time.timeZone = "Asia/Kolkata";

@@ -1,16 +1,7 @@
-{ config, lib, ... }:
-
-with lib;
+{ ... }:
 {
-  options.picom.enable = mkOption {
-    type = types.bool;
-    default = true;
-    description = "Enable or Disable Picom Service";
-  };
-
-  config = mkIf config.picom.enable {
   services.picom = {
-    enable = false;
+    enable = true;
     backend = "glx";                # Set Backend
     vSync = true;
     activeOpacity = 0.98;           # Opacity Rules
@@ -33,6 +24,5 @@ with lib;
       use-damage = false;           # Helps w flickering apparently
       corner-radius = 8;            # Rounded Corners
     };
-  };
   };
 }
