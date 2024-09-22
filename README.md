@@ -7,6 +7,8 @@ Took inspiration from quite a few configurations, but especially the two below:
 
 Pictures of my system are on my [Qtile config's](https://github.com/hoarfrost32/qtile_config) repository
 
+### File Structure
+
 ```
 .
 ├── flake.lock                                            
