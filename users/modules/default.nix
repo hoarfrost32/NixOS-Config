@@ -10,4 +10,6 @@
     ./Editors/Sublime/sublime.nix
     ./Sioyek/sioyek.nix
     ./mpv/mpv.nix
+    ./bat/bat.nix
+    ./tmux/tmux.nix
 ]
