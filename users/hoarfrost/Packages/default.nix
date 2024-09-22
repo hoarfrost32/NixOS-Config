@@ -1,7 +1,7 @@
 { pkgs }:
 
 
-(./programming.nix {inherit pkgs;}) ++
-(./tui.nix {inherit pkgs;}) ++
-(./applications.nix {inherit pkgs;}) ++
-(./cli-utilities.nix {inherit pkgs;})
+(import ./programming.nix {inherit pkgs;}) ++
+(import ./tui.nix {inherit pkgs;}) ++
+(import ./applications.nix {inherit pkgs;}) ++
+(import ./cli-utilities.nix {inherit pkgs;})
