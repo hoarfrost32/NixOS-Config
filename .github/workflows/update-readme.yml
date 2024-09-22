@@ -17,6 +17,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Print current branch
+        run: git rev-parse --abbrev-ref HEAD
+
+
       - name: Check for directory changes
         id: check_changes
         run: |
