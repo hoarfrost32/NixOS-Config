@@ -13,10 +13,7 @@
 
   # Packages I want installed.
   home.packages =
-    (import ./Packages/cli-utilities.nix {inherit pkgs;}) ++
-    (import ./Packages/applications.nix {inherit pkgs;}) ++
-    (import ./Packages/tui.nix {inherit pkgs;}) ++
-    (import ./Packages/programming.nix {inherit pkgs;}) ++
+    (import ./Packages {inherit pkgs;}) ++
     [(pkgs.discord.override {
       withVencord = true;
     })];
