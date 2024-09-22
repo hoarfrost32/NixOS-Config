@@ -12,65 +12,14 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   # Packages I want installed.
-  home.packages = with pkgs; [
-    hello
-    git
-    python3
-    hyperion-ng
-    racket
-    neofetch
-    ntfs3g
-    hoppscotch
-    nitrogen
-    xfce.thunar
-    telegram-desktop
-    alsa-utils
-    playerctl
-    flameshot
-    networkmanagerapplet
-    thunderbird
-    tmux
-    dmenu
-    zip
-    unzip
-    lapce
-    nil
-    x11_ssh_askpass
-    gnome-keyring
-    killall
-    nodejs_22
-    python312Packages.python-lsp-server
-    qbittorrent
-    cowsay
-    fortune
-    sl 
-    mpv
-    vlc
-    lsd
-    btop
-    ueberzugpp
-    mediainfo
-    xdragon
-    mdcat
-    highlight
-    poppler_utils
-    zed-editor
-    ripgrep
-    coreutils
-    fd
-    pandoc
-    shellcheck
-    zapzap
-    whatsapp-for-linux
-    ollama
-    cmake
-    gcc
-    parcellite
-    sublime4
-  ] ++
-  [(pkgs.discord.override {
-    withVencord = true;
-  })];
+  home.packages =
+    (import ./Packages/cli-utilities.nix) ++
+    (import ./Packages/applications.nix) ++
+    (import ./Packages/tui.nix) ++
+    (import ./Packages/programming.nix) ++
+    [(pkgs.discord.override {
+      withVencord = true;
+    })];
 
   programs = {
     git = {
