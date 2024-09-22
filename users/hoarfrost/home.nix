@@ -18,7 +18,6 @@
     python3
     hyperion-ng
     racket
-    sioyek
     neofetch
     ntfs3g
     hoppscotch
@@ -67,6 +66,7 @@
     cmake
     gcc
     parcellite
+    sublime4
   ] ++
   [(pkgs.discord.override {
     withVencord = true;
