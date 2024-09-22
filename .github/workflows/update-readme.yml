@@ -1,0 +1,47 @@
+name: Update README with tree
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Check for directory changes
+        id: check_changes
+        run: |
+          git fetch origin main
+          if git diff --name-only HEAD^ HEAD | grep -qv README.md; then
+            echo "true" > needs_update
+          else
+            echo "false" > needs_update
+          fi
+
+      - name: Run tree and update README if necessary
+        if: steps.check_changes.outputs.needs_update == 'true'
+        run: |
+          # Generate the tree output
+          tree > tree.txt
+
+          # Update the README.md
+          sed -i '/### File Structure/,$d' README.md
+          echo "## Directory Structure" >> README.md
+          cat tree.txt >> README.md
+          rm tree.txt
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.needs_update == 'true'
+        run: |
+          git add README.md
+          git commit -m "Update directory structure in README"
+          git push origin main
