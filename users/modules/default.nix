@@ -9,4 +9,5 @@
     ./Editors/Emacs/emacs.nix
     ./Editors/Sublime/sublime.nix
     ./Sioyek/sioyek.nix
+    ./mpv/mpv.nix
 ]

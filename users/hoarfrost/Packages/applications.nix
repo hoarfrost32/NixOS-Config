@@ -9,7 +9,6 @@ with pkgs; [
   networkmanagerapplet
   thunderbird
   qbittorrent
-  mpv
   vlc
   zapzap
   sublime4
