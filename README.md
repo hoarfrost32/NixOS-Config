@@ -7,21 +7,26 @@ Took inspiration from quite a few configurations, but especially the two below:
 
 Pictures of my system are on my [Qtile config's](https://github.com/hoarfrost32/qtile_config) repository
 
-The organisation of my config is mostly in two folders: *Hosts* & *Users* 
+The organisation of my config is mostly in two folders: *Hosts* & *Users*. I only have one machine and one user, but nixos is fun and if I ever end up having more of either then this structuring would probably help keep everything modular.
 
 ### Hosts Directory
-* This directory holds the configurations for the various host machines I may use. I only use one though (yeah nix isnt ideal for just managing one system (but its fun))
+* This directory holds the configurations for the various host machines I may use. I only use one though :p
 * `common.nix` holds configuration options I want enabled for all hosts, and then system specific configs are in their respective folders.
 * The modules folder holds system-level modules. Currently all I have their are the desktop options I may want (kde6 and qtile). To enable either kde or qtile just import them into the config, and type `qtile.enable = true;` or `kde.enable = true;` 
 
 ###  Users Directory
-* This directory holds the configurations for the various users I want to manage. There is only one user for now (again yeah nix isnt ideal for one user. see above on why im using it)
+* This directory holds the configurations for the various users I want to manage. There is only one user for now :)
 * the home-manager config of each user is in a directory of the same name as the user. many other user level modules are imported from within the user directory, the idea being that in the case of multiple users they can each import the modules they require as per their needs
 * Generally pretty much all user level modules are configured with options exposed in nix, with a few exceptions (like ranger).
 
 ### Catppuccin
 * Pretty much everything I could theme using catppuccin I have. Its incredibly easy to work with catppuccin if your config is set up as a flake (see [here](https://nix.catppuccin.com/))
-* Most of the modules in the users/modules directory are modules specifically because I wanted to access the catppuccin options
+* Most of the modules in the `users/modules` directory are modules specifically because I wanted to access the catppuccin options
+
+### TODO (List will grow as I remember more stuff)
+* Devshells
+* Maybe a shell script for package install that uses `sed` to put the package name in the correct file and then also runs rebuild?
+* Set up steam/wine/lutris
 
 ### File Structure
 
@@ -49,8 +54,8 @@ The organisation of my config is mostly in two folders: *Hosts* & *Users*
 └── users                                                     # User configurations are stored here
     ├── hoarfrost                                             # This is me. 
     │   └── home.nix
-    │   └── Packages
-    │       ├── applications.nix
+    │   └── Packages                                          # I split home.packages into multiple
+    │       ├── applications.nix                              # files.
     │       ├── cli-utilities.nix
     │       ├── default.nix
     │       ├── programming.nix
@@ -58,34 +63,34 @@ The organisation of my config is mostly in two folders: *Hosts* & *Users*
     └── modules                                               # Modules for the users
         ├── Alacritty                                         # Alacritty
         │   └── alacritty.nix
-        ├── bat
+        ├── bat                                               # A better cat
         │   └── bat.nix
-        ├── btop
+        ├── btop                                              # A better htop
         │   └── btop.nix
-        ├── default.nix
+        ├── default.nix                                       # imports
         ├── Dunst                                             # Dunst
         │   └── dunst.nix
-        ├── Editors
+        ├── Editors                                           # Text editors
         │   ├── Emacs
         │   │   └── emacs.nix
-        │   └── Sublime
+        │   └── Sublime    
         │       └── sublime.nix
         ├── Fish                                              # Fish
         │   └── fish.nix
-        ├── GTK                                               # GTK
+        ├── GTK                                               # Everything GTK themed by catppucin 
         │   └── gtk.nix
-        ├── mpv
+        ├── mpv                                               # Video Player
         │   └── mpv.nix
-        ├── Picom                                             # Picom
+        ├── Picom                                             # Compositor                                             
         │   └── picom.nix
-        ├── Ranger                                            # Ranger
+        ├── Ranger                                            # File Manager
         │   └── ranger.nix
-        └── Rofi                                              # Rofi
+        └── Rofi                                              # Better dmenu
         │   └── rofi.nix
-        ├── Sioyek
+        ├── Sioyek                                            # Doc Viewer and better zathura
         │   ├── config
         │   │   └── sioyek.config
         │   └── sioyek.nix
-        └── tmux
+        └── tmux                                              # Terminal multiplexer
             └── tmux.nix
 ```
