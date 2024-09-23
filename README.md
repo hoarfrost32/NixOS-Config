@@ -12,7 +12,7 @@ The organisation of my config is mostly in two folders: *Hosts* & *Users*. I onl
 ### Hosts Directory
 * This directory holds the configurations for the various host machines I may use. I only use one though :p
 * `common.nix` holds configuration options I want enabled for all hosts, and then system specific configs are in their respective folders.
-* The modules folder holds system-level modules. Currently all I have their are the desktop options I may want (kde6 and qtile). To enable either kde or qtile just import them into the config, and type `qtile.enable = true;` or `kde.enable = true;` 
+* The modules folder holds system-level modules. Currently all I have there are the desktop options I may want (kde6 and qtile). To enable either kde or qtile just import them into the config, and type `qtile.enable = true;` or `kde.enable = true;` 
 
 ###  Users Directory
 * This directory holds the configurations for the various users I want to manage. There is only one user for now :)
