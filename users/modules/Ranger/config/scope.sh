@@ -103,7 +103,7 @@ handle_extension() {
             
         # Markdown files
         markdown|md)
-            mdcat "${FILE_PATH}" && exit 5;;
+            bat "${FILE_PATH}" && exit 5;;
 
         ## HTML
         htm|html|xhtml)

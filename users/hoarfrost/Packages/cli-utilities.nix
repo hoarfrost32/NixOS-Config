@@ -14,7 +14,6 @@ with pkgs; [
  ueberzugpp
  mediainfo
  xdragon
- mdcat
  highlight
  fd
  pandoc
@@ -25,4 +24,8 @@ with pkgs; [
  poppler_utils
  ripgrep
  coreutils
+ tokei
+ tldr
+ dust
+ fd
 ]

@@ -13,4 +13,7 @@ with pkgs; [
   zapzap
   sublime4
   parcellite
+  kdePackages.okular
+  kicad
+  teams-for-linux
 ]

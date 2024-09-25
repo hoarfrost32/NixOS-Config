@@ -12,4 +12,5 @@
     ./mpv/mpv.nix
     ./bat/bat.nix
     ./tmux/tmux.nix
+    ./btop/btop.nix
 ]

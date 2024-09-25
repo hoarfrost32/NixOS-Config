@@ -5,7 +5,7 @@
     enable = true;
     catppuccin = {
       enable = true;
-      flavor = true;
+      flavor = "mocha";
     };
   };
 }

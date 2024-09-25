@@ -10,6 +10,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/desktops/default.nix
+      ../../modules/gaming/gaming.nix
     ];
 
   # Networking.
@@ -28,9 +29,6 @@
     pulseaudio.support32Bit = true;
 
     bluetooth.enable = true;
-
-    graphics.enable32Bit = true;
-    graphics.enable = true;
 
     nvidia = {
       # Modesetting is required.
@@ -63,9 +61,12 @@
     };
   };
 
-  # Enable qtile. Kinda fucky rn, fixing it, use kde meanwhile.
+  # Enable qtile. K̶i̶n̶d̶a̶ f̶u̶c̶k̶y̶ r̶n̶, f̶i̶x̶i̶n̶g̶ i̶t̶. u̶s̶e̶ k̶d̶e̶ m̶e̶a̶n̶wh̶i̶l̶e̶. fixed!
   # kde.enable = true;
   qtile.enable = true;
+
+  # Enable the gaming related options.
+  gaming.enable = true;
 
   security.rtkit.enable = true;
 
@@ -84,7 +85,7 @@
   users.users.hoarfrost = {
     isNormalUser = true;
     description = "hoarfrost";
-    extraGroups = [ "networkmanager" "wheel" "tty" "dialout" "video" "audio" "camera" "networkmanager" "lp" "scanner" ];
+    extraGroups = [ "networkmanager" "wheel" "tty" "dialout" "video" "audio" "camera" "networkmanager" "lp" "scanner" "gamemode"];
     shell = pkgs.fish;
   };
 

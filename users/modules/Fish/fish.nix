@@ -25,6 +25,8 @@
       cdtt = "cd ../..";
       ls = "lsd";
       mkdir = "mkdir -pv";
+
+      cat = "bat";
       
       #Fish stuff
       activate = "source .venv/bin/activate.fish";
@@ -44,9 +46,6 @@
       nixinfo="nix-shell -p nix-info --run 'nix-info -m'";
       nix-shell = "nix-shell --run fish";
       envpkgs = "nix-env -q";
-
-      epi = "home-manager switch --flake ~/path/to/your/flake#user --argstr picom.enable true";
-      dpi = "home-manager switch --flake ~/path/to/your/flake#user --argstr picom.enable false";
     };
     
     shellInit = ''
