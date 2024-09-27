@@ -28,4 +28,5 @@ with pkgs; [
  tldr
  dust
  fd
+ starship
 ]

@@ -15,8 +15,8 @@ with lib;
 
     # Hardware stuff
     hardware.graphics = {
-      driSupport = true;
-      driSupport32Bit = true;
+      enable = true;
+      enable32Bit = true;
 
       extraPackages = [pkgs.amdvlk];
       extraPackages32 = [pkgs.driversi686Linux.amdvlk];
@@ -33,7 +33,7 @@ with lib;
     # Steam
 
       # Apparently need to provide java in case there is a missing dependency
-    programs.java.enable = true;
+    # programs.java.enable = true;
 
       # Now on to steam
     programs.steam = {
@@ -41,20 +41,48 @@ with lib;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-      package = pkgs.steam.override {
-        withPrimus = true;
-        withJava = true;
-        extraPkgs = pkgs: [bumblebee glxinfo];
-      };
     };
 
     # Lutris, Wine
 
-    environment.systemPackages = with pkgs; [
-      lutris
-      wineWowPackages.stable
-      winetricks
-    ];
+  # environment.systemPackages = with pkgs; [
+  #     mangohud
+  #     vulkan-loader
+  #     vulkan-tools
+  #     bottles
+  #   ]++
+  #   [(lutris.override {
+  #     extraLibraries = pkgs: [
+  #       libvdpau
+  #       libgudev
+
+  #       gst_all_1.gstreamer
+  #       gst_all_1.gst-plugins-ugly
+  #       gst_all_1.gst-plugins-base
+  #       gst_all_1.gst-plugins-good
+  #       gst_all_1.gst-plugins-bad
+  #       pango
+  #       json-glib
+  #       libdrm
+  #       libxkbcommon
+  #       libxcrypt
+  #       libusb1
+
+  #       #screencap dependencies
+  #       gtk3
+  #       zlib
+  #       atk
+  #       cairo
+  #       freetype
+  #       gdk-pixbuf
+  #       fontconfig
+
+
+  #     ];
+  #     extraPkgs = pkgs: [
+  #       speex
+  #     ];
+  #   })];
 
   };
 }

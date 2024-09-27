@@ -16,4 +16,6 @@ with pkgs; [
   kdePackages.okular
   kicad
   teams-for-linux
+  qgis
+  gimp
 ]
