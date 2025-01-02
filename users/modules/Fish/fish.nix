@@ -3,10 +3,7 @@
 {
   programs.fish = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-    };
+
     shellAliases = {
 
       # git aliases
@@ -27,6 +24,7 @@
       mkdir = "mkdir -pv";
 
       cat = "bat";
+      tmux = "tmux -u";
       
       #Fish stuff
       activate = "source .venv/bin/activate.fish";

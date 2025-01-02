@@ -45,12 +45,10 @@ with lib;
 
     # Lutris, Wine
 
-  # environment.systemPackages = with pkgs; [
-  #     mangohud
-  #     vulkan-loader
-  #     vulkan-tools
-  #     bottles
-  #   ]++
+    environment.systemPackages = with pkgs; [
+      mangohud
+      bottles
+     ];
   #   [(lutris.override {
   #     extraLibraries = pkgs: [
   #       libvdpau

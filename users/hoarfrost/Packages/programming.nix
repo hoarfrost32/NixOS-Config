@@ -9,4 +9,6 @@ with pkgs; [
   python312Packages.python-lsp-server
   cmake
   gcc
+  texlive.combined.scheme-full
+  postman
 ]

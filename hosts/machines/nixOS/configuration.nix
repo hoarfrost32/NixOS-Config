@@ -28,37 +28,44 @@
     pulseaudio.enable = false;
     pulseaudio.support32Bit = true;
 
+    openrazer = {
+      enable = true;
+      batteryNotifier = {
+        enable = true;
+      };
+    };
+
     bluetooth.enable = true;
 
-    #nvidia = {
+    nvidia = {
       # Modesetting is required.
-      #modesetting.enable = true;
+      modesetting.enable = true;
 
       # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-      #powerManagement = {
-      #  enable = false;
+      powerManagement = {
+        enable = false;
         # Fine-grained power management. Turns off GPU when not in use.
-      #  finegrained = false;
-      #};
+        finegrained = false;
+      };
 
-      #prime = {
-      #  sync.enable = true;
+      prime = {
+        sync.enable = true;
         # Make sure to use the correct Bus ID values for your system!
-      #  nvidiaBusId = "PCI:1:0:0";
-      #  amdgpuBusId = "PCI:6:0:0";
-      #};
+        nvidiaBusId = "PCI:1:0:0";
+        amdgpuBusId = "PCI:6:0:0";
+      };
 
       # Use the NVidia open source kernel module (not to be confused with the
       # independent third-party "nouveau" open source driver).
       # Currently alpha-quality/buggy, so false is currently the recommended setting.
-     # open = false;
+      open = false;
 
       # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
-      #nvidiaSettings = true;
+      nvidiaSettings = true;
 
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      #package = config.boot.kernelPackages.nvidiaPackages.stable;
-    #};
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
   };
 
   # Enable qtile. K̶i̶n̶d̶a̶ f̶u̶c̶k̶y̶ r̶n̶, f̶i̶x̶i̶n̶g̶ i̶t̶. u̶s̶e̶ k̶d̶e̶ m̶e̶a̶n̶wh̶i̶l̶e̶. fixed!
@@ -70,16 +77,16 @@
 
   security.rtkit.enable = true;
 
-  #specialisation = {
-  #  on-the-go.configuration = {
-  #    system.nixos.tags = [ "on-the-go" ];
-  #    hardware.nvidia = {
-  #      prime.offload.enable = lib.mkForce true;
-  #      prime.offload.enableOffloadCmd = lib.mkForce true;
-  #      prime.sync.enable = lib.mkForce false;
-  #    };
-  #  };
-  #};
+  specialisation = {
+    on-the-go.configuration = {
+      system.nixos.tags = [ "on-the-go" ];
+      hardware.nvidia = {
+        prime.offload.enable = lib.mkForce true;
+        prime.offload.enableOffloadCmd = lib.mkForce true;
+        prime.sync.enable = lib.mkForce false;
+      };
+    };
+  };
 
   # User accounts
   users.users.hoarfrost = {
@@ -97,18 +104,32 @@
     font-awesome # Icons
     corefonts # MS
     noto-fonts # Google + Unicode
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-      ];
-    })
+    nerd-fonts.fira-code
+    # (nerdfonts.override {
+    #   fonts = [
+    #     "FiraCode"
+    #   ];
+    # })
+  ];
+
+
+  nixpkgs.overlays =
+  let
+    moz-rev="master";
+    moz-url= builtins.fetchTarball { url = "https://github.com/mozilla/nixpkgs-mozilla/archive/${moz-rev}.tar.gz"; };
+    nightlyOverlay = (import "${moz-url}/firefox-overlay.nix");
+  in [
+    nightlyOverlay
   ];
 
   # Install firefox and fish
   programs = {
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      package = pkgs.latest.firefox-nightly-bin;
+    };
     fish.enable = true;
   };
 
@@ -132,6 +153,12 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.openvpn.servers = {
+    iiitVPN = {
+      config = '' config /home/hoarfrost/.vpn-config/linux.ovpn'';
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

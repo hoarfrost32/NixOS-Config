@@ -18,4 +18,7 @@ with pkgs; [
   teams-for-linux
   qgis
   gimp
+  element-web
+  osu-lazer-bin
+  polychromatic
 ]

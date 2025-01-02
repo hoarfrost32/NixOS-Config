@@ -2,12 +2,12 @@
 
 {
   programs.starship = {
-    enable = true;
+    enable = false;
     settings = {
       time = {
         disabled = false;
         format = "[$time]($style)";
-        time_format = "%-I:%M:%S %p";
+        time_format = "%-I:%M";
         style = "bg:#6D6D6D fg:#14141B";
       };
     };

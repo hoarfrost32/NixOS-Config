@@ -34,13 +34,32 @@
       enable = true;
       nix-direnv.enable = true;
     };
+
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        github.copilot
+        github.copilot-chat
+        catppuccin.catppuccin-vsc-icons
+        catppuccin.catppuccin-vsc
+      ];
+    };
+
+    bat.enable = true;
+    btop.enable = true;
+    mpv.enable = true;
+    rofi.enable = true;
+    tmux.enable = true;
+  
   };
   
+  gtk.enable = true;
+
   catppuccin = {
     flavor = "mocha";
     enable = true;
     accent = "lavender";
-    pointerCursor = {
+    cursors = {
       enable = true;
       accent = "lavender";
       flavor = "mocha";

@@ -1,16 +1,12 @@
 [
     ./Alacritty/alacritty.nix
     ./Picom/picom.nix
-    ./GTK/gtk.nix
     ./Fish/fish.nix
     ./Ranger/ranger.nix
-    ./Rofi/rofi.nix
     ./Dunst/dunst.nix
     ./Editors/Emacs/emacs.nix
     ./Editors/Sublime/sublime.nix
     ./Sioyek/sioyek.nix
-    ./mpv/mpv.nix
-    ./bat/bat.nix
-    ./tmux/tmux.nix
-    ./btop/btop.nix
+    ./Starship/starship.nix
+    ./catppuccin.nix
 ]
