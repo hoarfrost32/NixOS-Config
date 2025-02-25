@@ -8,9 +8,9 @@ let
 
       if [ "$moncnt" -eq 2 ]; then
         ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --mode 2560x1440 --rate 165 --primary
-        ${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1-1 --mode 1920x1080 --right-of DP-2
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --mode 1920x1080 --right-of DP-2
       else
-        ${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1-1 --mode 1920x1080 --primary
+        ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --mode 1920x1080 --primary
       fi
     '';
   };

@@ -21,4 +21,6 @@ with pkgs; [
   element-web
   osu-lazer-bin
   polychromatic
+  zoom-us
+  arandr
 ]

@@ -34,4 +34,6 @@ with pkgs; [
  warp-terminal      # """AI Terminal""" 😂😂😂
  shutter            # flameshot fucking up
  nix-index          # hoooooly shit
+ conda              # python -m venv .venv >>>>>
+ textplots          # cli desmos very cool
 ]

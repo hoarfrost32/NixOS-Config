@@ -21,7 +21,7 @@
   };
 
   services.xserver.videoDrivers = ["nvidia"];
-  services.expressvpn.enable = true;
+  # services.expressvpn.enable = true;
 
   # Enable sound with pipewire.
   hardware = {
@@ -142,9 +142,9 @@
   };
   
   # Install expressvpn. 
-  environment.systemPackages = with pkgs; [
-    expressvpn
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   expressvpn
+  # ];
 
   # programs.gnupg.agent = {
   #   enable = true;

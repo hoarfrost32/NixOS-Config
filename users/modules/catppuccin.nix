@@ -48,5 +48,5 @@
         };
 
         alacritty.enable = true;
-    }
+    };
 }

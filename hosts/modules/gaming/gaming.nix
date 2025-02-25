@@ -47,7 +47,7 @@ with lib;
 
     environment.systemPackages = with pkgs; [
       mangohud
-      bottles
+      # bottles
      ];
   #   [(lutris.override {
   #     extraLibraries = pkgs: [
