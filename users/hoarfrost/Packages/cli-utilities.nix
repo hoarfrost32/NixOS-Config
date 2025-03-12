@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 with pkgs; [
  hello              # Testing Testing 1 2 3
@@ -20,7 +20,6 @@ with pkgs; [
  pandoc             # markdown viewer
  shellcheck         # checks shell scripts for erros
  neofetch           # most important arch user program
- alsa-utils         # Mic Check 4 5 6
  ntfs3g             # window
  poppler_utils      # collection of... stuff idr now
  ripgrep            # rusted grep
@@ -31,9 +30,9 @@ with pkgs; [
  sshfs              # 🤫
  linux-wifi-hotspot # hotspot
  plink-ng           # thank you shaun purcell of purcell lab
- warp-terminal      # """AI Terminal""" 😂😂😂
  shutter            # flameshot fucking up
  nix-index          # hoooooly shit
  conda              # python -m venv .venv >>>>>
  textplots          # cli desmos very cool
+ ollama             # 🦙
 ]

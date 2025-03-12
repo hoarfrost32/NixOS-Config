@@ -1,6 +1,25 @@
 { pkgs, lib, ... }:
 {
 
+  # Add this overlay to fix the expressvpn package
+  # nixpkgs.overlays = [
+  #   (self: super: {
+  #     expressvpn = super.expressvpn.overrideAttrs (old: {
+  #       dontFixup = true;
+
+  #       # Add a postInstall phase to fix the symlink
+  #       postInstall = ''
+  #         # Remove the broken symlink
+  #         rm -f $out/bin/expressvpnd
+          
+  #         # Copy the actual daemon binary instead of using a symlink
+  #         cp $out/opt/expressvpn/expressvpnd $out/bin/expressvpnd
+  #       '';
+
+  #     });
+  #   })
+  # ];
+
   # Bootloader.
   boot = {
     loader.systemd-boot.enable = true;
@@ -56,6 +75,11 @@
 
     # Enable blueman.
     blueman.enable = true;
+
+    # VPN.
+    # expressvpn = {
+    #   enable = true;
+    # };
 
     # Enable sound with pipewire.
     pipewire = {

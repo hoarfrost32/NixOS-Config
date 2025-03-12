@@ -1,14 +1,18 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 with pkgs; [
-  git
-  python3
-  racket
-  nil
-  nodejs_22
-  python312Packages.python-lsp-server
   cmake
   gcc
+  git
+  go
+  hoppscotch
+  nodejs_22
+  python3
+  python312Packages.python-lsp-server
+  racket
+  tectonic
   texlive.combined.scheme-full
-  postman
+  zed-editor
+  nixd
+  code-cursor
 ]

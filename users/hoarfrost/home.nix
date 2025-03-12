@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 
 {
   home.username = "hoarfrost";
@@ -13,10 +13,13 @@
 
   # Packages I want installed.
   home.packages =
-    (import ./Packages {inherit pkgs;}) ++
+    (import ./Packages {inherit pkgs; inherit inputs; inherit system;}) ++
     [(pkgs.discord.override {
       withVencord = true;
-    })];
+    })] ++ (with pkgs.kdePackages; [
+      kdeconnect-kde
+      okular
+    ]);
 
   programs = {
     git = {

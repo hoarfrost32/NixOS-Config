@@ -1,5 +1,3 @@
-{ ... }:
-
 let
   scopeConf = ./config/scope.sh;
 in
@@ -15,6 +13,14 @@ in
         };
       }
     ];
+    
+    rifle = [
+      {
+        condition = "mime ^image";
+        command = "sxiv \"$@\"";
+      }
+    ];  
+
     extraConfig = ''
       default_linemode devicons
       set preview_images true

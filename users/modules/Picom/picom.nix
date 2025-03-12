@@ -7,7 +7,7 @@
     activeOpacity = 0.98;           # Opacity Rules
     inactiveOpacity = 0.96;
     opacityRules = [                
-      "100:name *?= 'Firefox'"
+      "100:name *?= 'Zen Browser'"
       "100:name *?= 'mpv'"
       "100:name *?= 'VLC media player'"
     ];    

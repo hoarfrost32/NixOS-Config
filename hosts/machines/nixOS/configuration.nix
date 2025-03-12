@@ -127,7 +127,7 @@
   # Install firefox and fish
   programs = {
     firefox = {
-      enable = true;
+      enable = false;
       package = pkgs.latest.firefox-nightly-bin;
     };
     fish.enable = true;
