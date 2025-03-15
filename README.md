@@ -42,14 +42,16 @@ The organisation of my config is mostly in two folders: *Hosts* & *Users*. I onl
 │   │       ├── configuration.nix
 │   │       └── hardware-configuration.nix
 │   └── modules                                               # Modules for the devices. 
-│       └── desktops                                          # Desktop modules.
-│           ├── default.nix
-│           ├── kde                                           # KDE 6
-│           │   └── kde.nix
-│           ├── qtile                                         # Qtile
-│           │   └── qtile.nix
-│           └── xorg
-│               └── default.nix
+│       ├── desktops                                          # Desktop modules.
+│       │   ├── default.nix
+│       │   ├── kde                                           # KDE 6
+│       │   │   └── kde.nix
+│       │   ├── qtile                                         # Qtile
+│       │   │   └── qtile.nix
+│       │   └── xorg
+│       │       └── default.nix
+│       └── gaming
+│           └── gaming.nix
 ├── README.md
 └── users                                                     # User configurations are stored here
     ├── hoarfrost                                             # This is me. 
@@ -58,15 +60,11 @@ The organisation of my config is mostly in two folders: *Hosts* & *Users*. I onl
     │       ├── applications.nix                              # files.
     │       ├── cli-utilities.nix
     │       ├── default.nix
-    │       ├── programming.nix
-    │       └── tui.nix                                       
+    │       ├── programming.nix                                      
     └── modules                                               # Modules for the users
         ├── Alacritty                                         # Alacritty
         │   └── alacritty.nix
-        ├── bat                                               # A better cat
-        │   └── bat.nix
-        ├── btop                                              # A better htop
-        │   └── btop.nix
+        ├── catppuccin.nix
         ├── default.nix                                       # imports
         ├── Dunst                                             # Dunst
         │   └── dunst.nix
@@ -77,20 +75,17 @@ The organisation of my config is mostly in two folders: *Hosts* & *Users*. I onl
         │       └── sublime.nix
         ├── Fish                                              # Fish
         │   └── fish.nix
-        ├── GTK                                               # Everything GTK themed by catppucin 
-        │   └── gtk.nix
-        ├── mpv                                               # Video Player
-        │   └── mpv.nix
         ├── Picom                                             # Compositor                                             
         │   └── picom.nix
         ├── Ranger                                            # File Manager
+        │   ├── config
+        │   │   └── scope.sh
         │   └── ranger.nix
         └── Rofi                                              # Better dmenu
         │   └── rofi.nix
         ├── Sioyek                                            # Doc Viewer and better zathura
-        │   ├── config
-        │   │   └── sioyek.config
-        │   └── sioyek.nix
-        └── tmux                                              # Terminal multiplexer
-            └── tmux.nix
+            ├── config
+            │   └── sioyek.config
+            └── sioyek.nix
+
 ```
