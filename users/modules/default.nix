@@ -6,7 +6,6 @@
     ./Dunst/dunst.nix
     ./Editors/Emacs/emacs.nix
     ./Editors/Sublime/sublime.nix
-    ./Sioyek/sioyek.nix
     ./Starship/starship.nix
     ./catppuccin.nix
 ]

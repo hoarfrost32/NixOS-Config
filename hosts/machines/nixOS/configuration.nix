@@ -20,14 +20,17 @@
     networkmanager.enable = true;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
-  # services.expressvpn.enable = true;
+  services = {
+    xserver.videoDrivers = ["nvidia"];
+    # expressvpn.enable = true;
+    pulseaudio = {
+      enable = false;
+      support32Bit = true;
+    };
+  };
 
   # Enable sound with pipewire.
   hardware = {
-    pulseaudio.enable = false;
-    pulseaudio.support32Bit = true;
-
     openrazer = {
       enable = true;
       batteryNotifier = {
@@ -145,12 +148,7 @@
   # environment.systemPackages = with pkgs; [
   #   expressvpn
   # ];
-
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
+ 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
