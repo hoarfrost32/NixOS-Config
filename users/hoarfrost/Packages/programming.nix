@@ -15,4 +15,5 @@ with pkgs; [
   zed-editor
   nixd
   code-cursor
+  clang-tools
 ]
