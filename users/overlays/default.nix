@@ -1,0 +1,3 @@
+[
+    ./proton-vpn.nix
+]
