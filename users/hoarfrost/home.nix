@@ -1,10 +1,30 @@
-{ pkgs, inputs, system, ... }:
+{ inputs, system, ... }:
 
-let 
-  overlays = [
-    (import ../overlays)
-  ];
-  pkgs = import <nixpkgs> {overlays = overlays; };
+let
+  pkgs = import <nixpkgs> {
+    config = {
+      allowUnfree = true; 
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+        "electron-32.3.3"
+      ];
+    };
+    overlays = [
+      (final: prev: {
+        protonvpn-gui = prev.protonvpn-gui.overrideAttrs (oldAttrs: rec {
+          version = "4.9.4";
+          src = prev.fetchFromGitHub {
+            owner = "ProtonVPN";
+            repo = "proton-vpn-gtk-app";
+            tag = "v${version}";
+            # Use a placeholder hash to get the correct one, then replace it.
+            sha256 = "sha256-r0mcIGmBuGp3wDuHIZrb9tQ/vZ74DvAfLMuJFJNlyfY=";
+          };
+          buildInputs = (oldAttrs.buildInputs or []) ++ [ prev.libnotify ];
+        });
+      })
+    ];
+  };
 in
 {
   home.username = "hoarfrost";

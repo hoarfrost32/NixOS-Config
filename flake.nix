@@ -23,6 +23,7 @@
     };
   };
 
+  
   outputs = { self, nixpkgs, zen-browser, home-manager, nixos-hardware, catppuccin, ... } @ inputs:
     {
       nixosConfigurations.nixOS = nixpkgs.lib.nixosSystem {
