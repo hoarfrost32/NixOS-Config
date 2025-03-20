@@ -28,6 +28,7 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
+    "electron-32.3.3"
   ];
 
   # Set time zone.

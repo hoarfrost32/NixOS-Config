@@ -18,6 +18,10 @@
     hostName = "nixos"; # Define your hostname.
     # Enable networking
     networkmanager.enable = true;
+    firewall = {
+      enable = false;
+      # allowedTCPPorts = [ 22 80 62819 ];
+    };
   };
 
   services = {

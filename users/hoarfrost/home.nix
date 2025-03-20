@@ -1,5 +1,11 @@
 { pkgs, inputs, system, ... }:
 
+let 
+  overlays = [
+    (import ../overlays)
+  ];
+  pkgs = import <nixpkgs> {overlays = overlays; };
+in
 {
   home.username = "hoarfrost";
   home.homeDirectory = "/home/hoarfrost";
