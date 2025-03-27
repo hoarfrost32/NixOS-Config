@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{...}:
 
 {
     catppuccin = {
@@ -13,7 +13,7 @@
         };
 
         mpv = {
-            enable = true;
+            enable = false;
             flavor = "mocha";
             accent = "lavender";
         };

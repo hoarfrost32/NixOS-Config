@@ -31,6 +31,14 @@
       enable = false;
       support32Bit = true;
     };
+    gnome.gnome-keyring.enable = true;
+  };
+  
+  security = {
+    pam.services = {
+      login.enableGnomeKeyring = true;
+      lightdm.enableGnomeKeyring = true;
+    };
   };
 
   # Enable sound with pipewire.

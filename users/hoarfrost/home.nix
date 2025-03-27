@@ -9,21 +9,22 @@ let
         "electron-32.3.3"
       ];
     };
-    overlays = [
-      (final: prev: {
-        protonvpn-gui = prev.protonvpn-gui.overrideAttrs (oldAttrs: rec {
-          version = "4.9.4";
-          src = prev.fetchFromGitHub {
-            owner = "ProtonVPN";
-            repo = "proton-vpn-gtk-app";
-            tag = "v${version}";
-            # Use a placeholder hash to get the correct one, then replace it.
-            sha256 = "sha256-r0mcIGmBuGp3wDuHIZrb9tQ/vZ74DvAfLMuJFJNlyfY=";
-          };
-          buildInputs = (oldAttrs.buildInputs or []) ++ [ prev.libnotify ];
-        });
-      })
-    ];
+    overlays = [(import ../overlays)];
+    # [
+    #   (final: prev: {
+    #     protonvpn-gui = prev.protonvpn-gui.overrideAttrs (oldAttrs: rec {
+    #       version = "4.9.4";
+    #       src = prev.fetchFromGitHub {
+    #         owner = "ProtonVPN";
+    #         repo = "proton-vpn-gtk-app";
+    #         tag = "v${version}";
+    #         # Use a placeholder hash to get the correct one, then replace it.
+    #         sha256 = "sha256-r0mcIGmBuGp3wDuHIZrb9tQ/vZ74DvAfLMuJFJNlyfY=";
+    #       };
+    #       buildInputs = (oldAttrs.buildInputs or []) ++ [ prev.libnotify ];
+    #     });
+    #   })
+    # ];
   };
 in
 {
@@ -101,6 +102,7 @@ in
     EDITOR = "emacs";
     SHELL = "fish";
     TERMINAL = "alacritty";
+    
   };
 
   # Let Home Manager install and manage itself.
