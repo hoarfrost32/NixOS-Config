@@ -88,7 +88,7 @@
   qtile.enable = true;
 
   # Enable the gaming related options.
-  gaming.enable = true;
+  gaming.enable = false;
 
   security.rtkit.enable = true;
 

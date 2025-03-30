@@ -3,7 +3,6 @@
 with pkgs; [
   cmake
   gcc
-  git
   go
   hoppscotch
   nodejs_22

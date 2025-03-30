@@ -17,7 +17,7 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
+    
     catppuccin = {
       url = "github:catppuccin/nix";
     };
@@ -31,9 +31,7 @@
         specialArgs = { inherit inputs; };
         
         modules = [
-          #(nixpkgs.lib.mkOverride 10 (nixos-hardware.nixosModules.lenovo-legion-15ach6h // {
-          #  hardware.nvidia.powerManagement.enable = false;
-          #}))
+
           (import ./hosts { system = "nixOS"; })
           home-manager.nixosModules.home-manager
           {

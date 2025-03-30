@@ -36,4 +36,6 @@ with pkgs; [
  textplots          # cli desmos very cool
  ollama             # 🦙
  libnatpmp
+ tree
 ]
+

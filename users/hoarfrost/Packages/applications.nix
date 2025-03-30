@@ -21,7 +21,7 @@ with pkgs; [
   arandr                 # very cool
   lmms                   # large manguage models
   inputs.zen-browser.packages."${system}".default # picture mad men final scene
-  sxiv                   # simple image viewer (X) 
-  zulip
-  protonvpn-gui
+  sxiv                   # this vixs me
+  zulip                  
+  protonvpn-gui          
 ]

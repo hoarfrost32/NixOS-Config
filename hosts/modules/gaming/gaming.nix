@@ -32,10 +32,7 @@ with lib;
 
     # Steam
 
-      # Apparently need to provide java in case there is a missing dependency
-    # programs.java.enable = true;
-
-      # Now on to steam
+    # Now on to steam
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
