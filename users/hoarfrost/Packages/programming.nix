@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 with pkgs; [
   cmake

@@ -9,7 +9,7 @@ let
         "electron-32.3.3"
       ];
     };
-    overlays = [(import ../overlays)];
+    overlays = [(import ../overlays {inherit inputs system;})];
     # [
     #   (final: prev: {
     #     protonvpn-gui = prev.protonvpn-gui.overrideAttrs (oldAttrs: rec {
