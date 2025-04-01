@@ -7,24 +7,10 @@ let
       permittedInsecurePackages = [
         "openssl-1.1.1w"
         "electron-32.3.3"
+        "python3.12-youtube-dl-2021.12.17"
       ];
     };
-    overlays = [(import ../overlays {inherit inputs system;})];
-    # [
-    #   (final: prev: {
-    #     protonvpn-gui = prev.protonvpn-gui.overrideAttrs (oldAttrs: rec {
-    #       version = "4.9.4";
-    #       src = prev.fetchFromGitHub {
-    #         owner = "ProtonVPN";
-    #         repo = "proton-vpn-gtk-app";
-    #         tag = "v${version}";
-    #         # Use a placeholder hash to get the correct one, then replace it.
-    #         sha256 = "sha256-r0mcIGmBuGp3wDuHIZrb9tQ/vZ74DvAfLMuJFJNlyfY=";
-    #       };
-    #       buildInputs = (oldAttrs.buildInputs or []) ++ [ prev.libnotify ];
-    #     });
-    #   })
-    # ];
+    overlays = [(import ../overlays)];
   };
 in
 {
@@ -66,7 +52,7 @@ in
     };
 
     vscode = {
-      enable = true;
+      enable = false;
       extensions = with pkgs.vscode-extensions; [
         github.copilot
         github.copilot-chat

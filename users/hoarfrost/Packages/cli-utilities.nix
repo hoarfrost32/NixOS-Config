@@ -37,5 +37,7 @@ with pkgs; [
  ollama             # 🦙
  libnatpmp
  tree
+ ytermusic
+ ytmdesktop
 ]
 

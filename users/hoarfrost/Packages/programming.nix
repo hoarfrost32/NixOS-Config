@@ -1,4 +1,4 @@
-{ inputs, pkgs, system, ... }:
+{ pkgs, ... }:
 
 with pkgs; [
   cmake
@@ -11,8 +11,9 @@ with pkgs; [
   racket
   tectonic
   texlive.combined.scheme-full
-  zed-editor
+  zed-editor-fhs
   nixd
-  code-cursor
+  nil
+  # code-cursor
   clang-tools
 ]
