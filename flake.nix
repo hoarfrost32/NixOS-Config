@@ -15,7 +15,7 @@
     };
     
     catppuccin = {
-      url = "github:catppuccin/nix";
+      url = "github:catppuccin/nix/62424ccd65e280f3739754e0f30b85c901f6bcd9";
     };
     
     zed-editor.url = "github:zed-industries/zed";

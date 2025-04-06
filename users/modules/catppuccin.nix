@@ -9,7 +9,7 @@
         
         rofi = {
             enable = true;
-            flavor = "macchiato";
+            flavor = "mocha";
         };
 
         mpv = {
