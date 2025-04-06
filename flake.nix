@@ -15,11 +15,11 @@
     };
     
     catppuccin = {
-      url = "github:catppuccin/nix/62424ccd65e280f3739754e0f30b85c901f6bcd9";
+      url = "github:catppuccin/nix";
     };
     
-    zed-editor.url = "github:zed-industries/zed";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    # zed-editor.url = "github:zed-industries/zed";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake/165ee672e6b17a8bcc0a3fb51fab3f79715cc1f3";
     
   };
 
@@ -41,7 +41,7 @@
               users.hoarfrost = {
                 imports = [ 
                   ./users/hoarfrost/home.nix
-                  catppuccin.homeManagerModules.catppuccin
+                  catppuccin.homeModules.catppuccin
                 ];
               };
               extraSpecialArgs = { inherit inputs; system = "x86_64-linux"; };

@@ -14,6 +14,5 @@ with pkgs; [
   zed-editor-fhs
   nixd
   nil
-  # code-cursor
   clang-tools
 ]
