@@ -11,7 +11,7 @@ with pkgs; [
   racket
   tectonic
   texlive.combined.scheme-full
-  zed-editor-fhs
+  zed-editor
   nixd
   nil
   clang-tools
