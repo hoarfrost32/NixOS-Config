@@ -1,5 +1,7 @@
-{zed-editor-input ? null}:
+{ zeditor-input }:
 
 final: prev:
-  (import ./proton-vpn.nix final prev) //
-  (import ./zed-editor.nix {inherit final prev; inherit zed-editor-input;})
+  let
+    protonVpnOverlay = import ./proton-vpn.nix final prev;
+    zedEditorOverlay = import ./zed-editor.nix final prev zeditor-input;
+  in protonVpnOverlay // zedEditorOverlay

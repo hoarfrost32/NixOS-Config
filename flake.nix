@@ -16,18 +16,18 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     catppuccin = {
       url = "github:catppuccin/nix";
     };
-    
+
     # zed-editor.url = "github:zed-industries/zed";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/165ee672e6b17a8bcc0a3fb51fab3f79715cc1f3";
     
   };
 
   
-  outputs = { self, nixpkgs, zen-browser, home-manager, nixos-hardware, catppuccin, ... } @ inputs:
+  outputs = { self, nixpkgs, zen-browser, home-manager, nixos-hardware, catppuccin, zed-editor-input, ... } @ inputs:
     {
       nixosConfigurations.nixOS = nixpkgs.lib.nixosSystem {
         
@@ -47,7 +47,7 @@
                   catppuccin.homeModules.catppuccin
                 ];
               };
-              extraSpecialArgs = { inherit inputs; system = "x86_64-linux"; };
+              extraSpecialArgs = { inherit inputs; inherit zed-editor-input; system = "x86_64-linux"; };
               backupFileExtension = ".bak";
             };
           }

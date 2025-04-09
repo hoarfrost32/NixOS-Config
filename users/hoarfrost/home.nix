@@ -1,4 +1,4 @@
-{ inputs, system, zed-editor-input, ... }:
+{ inputs, zed-editor-input, system, ... }:
 
 let
   pkgs = import <nixpkgs> {
@@ -10,8 +10,12 @@ let
         "python3.12-youtube-dl-2021.12.17"
       ];
     };
-    overlays = [(import ../overlays {inherit zed-editor-input;})];
-  };
+    overlays = [
+      (import ../overlays {
+        zeditor-input = import zed-editor-input {};
+      })
+    ];
+};
 in
 {
   home.username = "hoarfrost";
