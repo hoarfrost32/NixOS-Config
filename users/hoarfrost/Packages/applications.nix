@@ -24,4 +24,5 @@ with pkgs; [
   sxiv                   # this vixs me
   zulip                  
   protonvpn-gui          
+  discourse             
 ]

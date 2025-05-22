@@ -36,6 +36,7 @@ in
     })] ++ (with pkgs.kdePackages; [
       kdeconnect-kde
       okular
+      dolphin
     ]);
 
   programs = {

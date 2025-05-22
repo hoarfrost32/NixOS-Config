@@ -40,11 +40,11 @@ with lib;
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
 
-    # Lutris, Wine
+    # MangoHud and Bottles
 
     environment.systemPackages = with pkgs; [
       mangohud
-      # bottles
+      bottles
      ];
   #   [(lutris.override {
   #     extraLibraries = pkgs: [

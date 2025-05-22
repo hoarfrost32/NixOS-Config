@@ -22,7 +22,7 @@
     };
 
     # zed-editor.url = "github:zed-industries/zed";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake/165ee672e6b17a8bcc0a3fb51fab3f79715cc1f3";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
   
   outputs = { self, nixpkgs, zen-browser, home-manager, nixos-hardware, catppuccin, zed-editor-input, ... } @ inputs:

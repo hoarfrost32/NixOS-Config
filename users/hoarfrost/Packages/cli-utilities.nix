@@ -35,9 +35,11 @@ with pkgs; [
  conda              # python -m venv .venv >>>>>
  textplots          # cli desmos very cool
  ollama             # 🦙
- libnatpmp
- tree
+ libnatpmp 
+ tree               
  ytermusic
  ytmdesktop
+ imagemagick
+ libnotify
 ]
 
