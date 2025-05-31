@@ -56,16 +56,6 @@ in
       nix-direnv.enable = true;
     };
 
-    vscode = {
-      enable = false;
-      extensions = with pkgs.vscode-extensions; [
-        github.copilot
-        github.copilot-chat
-        catppuccin.catppuccin-vsc-icons
-        catppuccin.catppuccin-vsc
-      ];
-    };
-
     bat.enable = true;
     btop.enable = true;
     mpv.enable = true;

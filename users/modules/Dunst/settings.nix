@@ -1,0 +1,47 @@
+{ ... }:
+{
+  global = {
+    alignment = "left";
+    always_run_script = true;
+    # browser = "${inputs.zen-browser.packages."${system}".default}/bin/floorp";
+
+    font = "JetBrainsMono Nerd Font Mono 10";
+    frame_color = "#24273a";
+    separator_color = "frame";
+
+    indicate_hidden = "yes";
+
+    mouse_left_click = "do_action, close_current";
+    mouse_middle_click = "do_action, close_current";
+    mouse_right_click = "close_all";
+
+    corner_radius = 4;
+    frame_width = 2;
+    horizontal_padding = 14;
+    padding = 8;
+    separator_height = 2;
+
+    show_indicators = "yes";
+    sticky_history = "no";
+    vertical_alignment = "center";
+    word_wrap = "yes";
+  };
+
+  urgency_low = {
+    background = "#0D0D1680";
+    foreground = "#8AADF4";
+    timeout = 10;
+  };
+
+  urgency_normal = {
+    background = "#0D0D1680";
+    foreground = "#EED49F";
+    timeout = 15;
+  };
+
+  urgency_critical = {
+    background = "#0D0D1680";
+    foreground = "#ED8796";
+    timeout = 30;
+  };
+}

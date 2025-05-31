@@ -27,10 +27,10 @@
   services = {
     xserver.videoDrivers = ["nvidia"];
     # expressvpn.enable = true;
-    pulseaudio = {
-      enable = false;
-      support32Bit = true;
-    };
+    # pulseaudio = {
+    #   enable = false;
+    #   support32Bit = true;
+    # };
     gnome.gnome-keyring.enable = true;
   };
   
@@ -41,7 +41,6 @@
     };
   };
 
-  # Enable sound with pipewire.
   hardware = {
     openrazer = {
       enable = true;

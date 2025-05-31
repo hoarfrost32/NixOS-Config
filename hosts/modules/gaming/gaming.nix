@@ -14,12 +14,19 @@ with lib;
   config = mkIf (config.gaming.enable) {
 
     # Hardware stuff
-    hardware.graphics = {
+    hardware = {
+      graphics = {
       enable = true;
       enable32Bit = true;
 
       extraPackages = [pkgs.amdvlk];
       extraPackages32 = [pkgs.driversi686Linux.amdvlk];
+      };
+      
+      pulseaudio = {
+        enable = false;
+        # support32Bit = true; # Enable 32-bit support for PulseAudio
+      };
     };
 
     # Enable Gamemode

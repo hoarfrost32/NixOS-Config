@@ -7,5 +7,6 @@
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
+    settings = (import ./settings.nix);
   };
 }

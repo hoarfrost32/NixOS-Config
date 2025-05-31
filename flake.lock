@@ -200,11 +200,11 @@
     },
     "zed-editor-input": {
       "locked": {
-        "lastModified": 1747885982,
-        "narHash": "sha256-rSuxACdwx5Ndr2thpjqcG89fj8mSSp96CFoCt0yrdkY=",
+        "lastModified": 1748410535,
+        "narHash": "sha256-xATwKIbwrE4P61a1iVvPomVmX5npnLm6Ibc+K1tjzi4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a16efe5d2fc7455d7328a01f4692bfec152965b3",
+        "rev": "aeb017b5830518483e0081d2ac6e12dd4d787f5d",
         "type": "github"
       },
       "original": {
