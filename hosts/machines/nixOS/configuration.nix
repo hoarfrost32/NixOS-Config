@@ -48,6 +48,7 @@
         enable = true;
       };
     };
+    opengl.enable = true;
 
     bluetooth.enable = true;
 
@@ -106,7 +107,7 @@
   users.users.hoarfrost = {
     isNormalUser = true;
     description = "hoarfrost";
-    extraGroups = [ "networkmanager" "wheel" "tty" "dialout" "video" "audio" "camera" "networkmanager" "lp" "scanner" "gamemode"];
+    extraGroups = [ "networkmanager" "wheel" "tty" "dialout" "video" "audio" "camera" "lp" "scanner" "gamemode"];
     shell = pkgs.fish;
   };
 

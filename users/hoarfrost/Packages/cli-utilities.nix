@@ -41,5 +41,6 @@ with pkgs; [
  ytmdesktop
  imagemagick
  libnotify
+ gh
 ]
 

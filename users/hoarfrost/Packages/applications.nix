@@ -25,4 +25,5 @@ with pkgs; [
   zulip                  
   protonvpn-gui          
   discourse             
+  nyxt
 ]
