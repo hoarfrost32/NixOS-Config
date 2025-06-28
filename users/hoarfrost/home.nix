@@ -1,4 +1,4 @@
-{ inputs, zed-editor-input, system, ... }:
+{ inputs, zed-editor-input, system, myScripts, ... }:
 
 let
   pkgs = import <nixpkgs> {
@@ -37,6 +37,8 @@ in
       kdeconnect-kde
       okular
       dolphin
+    ]) ++ (with myScripts; [
+      (toggle-service pkgs)
     ]);
 
   programs = {

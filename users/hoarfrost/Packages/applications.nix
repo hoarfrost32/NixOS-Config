@@ -26,4 +26,5 @@ with pkgs; [
   protonvpn-gui          
   discourse             
   nyxt
+  slack
 ]

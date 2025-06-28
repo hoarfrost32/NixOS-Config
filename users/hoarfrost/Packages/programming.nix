@@ -15,4 +15,5 @@ with pkgs; [
   nixd
   nil
   clang-tools
+  code-cursor
 ]

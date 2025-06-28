@@ -37,6 +37,11 @@
       #direnv
       usenix = ''echo "use nix" >> .envrc && direnv allow'';
       
+      #picom
+      picom-start = "systemctl --user start picom.service";
+      picom-stop = "systemctl --user stop picom.service";
+      picom-restart = "systemctl --user restart picom.service";
+      
       # nix aliases
       rebuild = "sudo nixos-rebuild switch --flake .#nixOS --impure";
       nixgc="sudo nix-collect-garbage -d";        
