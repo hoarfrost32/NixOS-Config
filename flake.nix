@@ -27,17 +27,26 @@
   
   outputs = { self, nixpkgs, zen-browser, home-manager, nixos-hardware, catppuccin, zed-editor-input, ... } @ inputs:
   let
-    _module.args.myScripts = {
-      toggle-service = pkgs: pkgs.writeShellScriptBin "toggle-service" (builtins.readFile ./scripts/toggle-service.sh);
+    myScripts = {
+      display-setup = pkgs: pkgs.writeShellApplication {
+        name = "display-setup";
+        runtimeInputs = [ pkgs.xorg.xrandr pkgs.gnugrep ];
+        text = builtins.readFile ./scripts/display-setup.sh;
+      };
+      
+      toggle-service = pkgs: pkgs.writeShellApplication {
+        name = "toggle-service";
+        runtimeInputs = [ pkgs.systemd ];
+        text = builtins.readFile ./scripts/toggle-service.sh;
+      };
     };
   in  
     {
       nixosConfigurations.nixOS = nixpkgs.lib.nixosSystem {
         
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; inherit myScripts; };
         
         modules = [
-
           (import ./hosts { system = "nixOS"; })
           home-manager.nixosModules.home-manager
           {
@@ -54,7 +63,7 @@
                 inherit inputs; 
                 inherit zed-editor-input; 
                 system = "x86_64-linux";
-                myScripts = self._module.args.myScripts; 
+                myScripts = myScripts; 
               };
               backupFileExtension = ".bak";
             };

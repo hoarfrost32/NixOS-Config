@@ -38,7 +38,7 @@ in
       okular
       dolphin
     ]) ++ (with myScripts; [
-      (toggle-service pkgs)
+      toggle-service
     ]);
 
   programs = {

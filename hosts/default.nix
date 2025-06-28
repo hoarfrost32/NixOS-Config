@@ -1,9 +1,6 @@
-{ system, ... }:
+{ system, myScripts, ... }:
 
-{
-
-  imports =[
-      ./common.nix
-      ./machines/${system}/configuration.nix
-    ];
-}
+  let
+    common = import ./common.nix;
+    machine_config = import ./machines/${system}/configuration.nix { inherit myScripts; };
+  in common // machine_config
