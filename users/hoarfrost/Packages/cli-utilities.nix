@@ -42,5 +42,6 @@ with pkgs; [
  imagemagick
  libnotify
  gh
+ llama-cpp
 ]
 

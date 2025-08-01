@@ -2,7 +2,8 @@
 
 final: prev:
   let
-    protonVpnOverlay = import ./proton-vpn.nix final prev;
+    # protonVpnOverlay = import ./proton-vpn.nix final prev;
     zedEditorOverlay = import ./zed-editor.nix final prev zeditor-input;
     tyOverlay = import ./ty.nix final prev zeditor-input;
-  in protonVpnOverlay // zedEditorOverlay // tyOverlay
+    llamaOverlay = import ./llama-cpp.nix final prev; 
+  in zedEditorOverlay // tyOverlay // llamaOverlay
