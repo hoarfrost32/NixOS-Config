@@ -44,7 +44,7 @@
     {
       nixosConfigurations.nixOS = nixpkgs.lib.nixosSystem {
         
-        specialArgs = { inherit inputs; inherit myScripts; };
+        specialArgs = { inherit inputs; };
         
         modules = [
           (import ./hosts { system = "nixOS"; })
@@ -60,10 +60,9 @@
                 ];
               };
               extraSpecialArgs = { 
-                inherit inputs; 
+                inherit zen-browser;
                 inherit zed-editor-input; 
-                system = "x86_64-linux";
-                myScripts = myScripts; 
+                inherit myScripts; 
               };
               backupFileExtension = ".bak";
             };

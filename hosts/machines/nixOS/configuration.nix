@@ -2,14 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, myScripts, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/desktops/default.nix {inherit myScripts;}
+      ../../modules/desktops/default.nix
       ../../modules/gaming/gaming.nix
     ];
 
@@ -18,6 +18,12 @@
     hostName = "nixos"; # Define your hostname.
     # Enable networking
     networkmanager.enable = true;
+    
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
+    
     firewall = {
       enable = false;
       # allowedTCPPorts = [ 22 80 62819 ];
@@ -32,6 +38,7 @@
     #   support32Bit = true;
     # };
     gnome.gnome-keyring.enable = true;
+    tailscale.enable = true;
   };
   
   security = {
@@ -39,6 +46,11 @@
       login.enableGnomeKeyring = true;
       lightdm.enableGnomeKeyring = true;
     };
+  };
+  
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   hardware = {
@@ -91,6 +103,10 @@
   gaming.enable = true;
 
   security.rtkit.enable = true;
+  
+  powerManagement.resumeCommands = ''
+    ${pkgs.procps}/bin/pkill -f gnome-keyring-daemon
+  '';
 
   specialisation = {
     on-the-go.configuration = {

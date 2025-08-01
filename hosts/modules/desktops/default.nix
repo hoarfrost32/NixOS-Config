@@ -1,9 +1,9 @@
-{ myScripts, ... }:
+{ ... }:
 
 {
   imports = [
     ./kde/kde.nix
-    ./qtile/qtile.nix {inherit myScripts;}
+    ./qtile/qtile.nix
     ./xorg/default.nix
   ];
 }

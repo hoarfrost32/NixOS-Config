@@ -1,6 +1,6 @@
-{ pkgs, inputs, system }:
+{ pkgs }:
 
 
-(import ./programming.nix {inherit pkgs; inherit inputs; inherit system;}) ++
-(import ./applications.nix {inherit pkgs; inherit inputs; inherit system;}) ++
-(import ./cli-utilities.nix {inherit pkgs; inherit inputs; inherit system;})
+(import ./programming.nix {inherit pkgs;}) ++
+(import ./applications.nix {inherit pkgs;}) ++
+(import ./cli-utilities.nix {inherit pkgs;})

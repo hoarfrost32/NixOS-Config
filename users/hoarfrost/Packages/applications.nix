@@ -1,4 +1,4 @@
-{ pkgs, inputs, system }:
+{ pkgs }:
 
 with pkgs; [
   hyperion-ng            # wanted to do light-sync with the LED strip I installed, but this is very laggy. BETTER OPTION use Ambibox through wine
@@ -20,11 +20,19 @@ with pkgs; [
   zoom-us                # my hands are tied yet again
   arandr                 # very cool
   lmms                   # large manguage models
-  inputs.zen-browser.packages."${system}".default # picture mad men final scene
+  # zen-browser.packages."x86_64-linux".default # picture mad men final scene
   sxiv                   # this vixs me
   zulip                  
   protonvpn-gui          
   discourse             
   nyxt
   slack
+  firefox
+  mattermost-desktop
+  easyeffects
+  vscode
+  alarm-clock-applet
+  gpu-screen-recorder-gtk
+  inkscape
+  sumo
 ]

@@ -22,7 +22,7 @@
       };
       settings.vsync-use-glfinish = true;                 # Vsync
       use-damage = false;           # Helps w flickering apparently
-      corner-radius = 8;            # Rounded Corners
+      # corner-radius = 8;            # Rounded Corners
     };
   };
 }

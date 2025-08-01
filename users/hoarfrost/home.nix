@@ -1,4 +1,4 @@
-{ inputs, zed-editor-input, system, myScripts, ... }:
+{ zen-browser, zed-editor-input, myScripts, ... }:
 
 let
   pkgs = import <nixpkgs> {
@@ -15,11 +15,15 @@ let
         zeditor-input = import zed-editor-input {};
       })
     ];
-};
+  };
+  
+  zen-pkg = zen-browser.packages.${pkgs.system}.default;
 in
 {
   home.username = "hoarfrost";
   home.homeDirectory = "/home/hoarfrost";
+
+  xsession.enable = true;
 
   # Import all needed modules.
   imports = (import ../modules);
@@ -30,7 +34,7 @@ in
 
   # Packages I want installed.
   home.packages =
-    (import ./Packages {inherit pkgs; inherit inputs; inherit system;}) ++
+    (import ./Packages {inherit pkgs;}) ++
     [(pkgs.discord.override {
       withVencord = true;
     })] ++ (with pkgs.kdePackages; [
@@ -38,8 +42,8 @@ in
       okular
       dolphin
     ]) ++ (with myScripts; [
-      toggle-service
-    ]);
+      (toggle-service pkgs)
+    ]) ++ [zen-pkg];
 
   programs = {
     git = {
