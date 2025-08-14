@@ -22,17 +22,17 @@ with pkgs; [
   lmms                   # large manguage models
   # zen-browser.packages."x86_64-linux".default # picture mad men final scene
   sxiv                   # this vixs me
-  zulip                  
-  protonvpn-gui          
-  discourse             
-  nyxt
-  slack
-  firefox
-  mattermost-desktop
-  easyeffects
-  vscode
-  alarm-clock-applet
-  gpu-screen-recorder-gtk
-  inkscape
-  sumo
+  zulip                  # oss discord
+  protonvpn-gui          # finest vpn
+  discourse              # vichar vimarsh
+  nyxt                   # the nyxt web browser
+  slack                  # proprietary corpo discord
+  mattermost-desktop     # oss corpo discord
+  firefox                # oss chrome
+  easyeffects            # audio effects
+  alarm-clock-applet     # tring tring
+  gpu-screen-recorder-gtk # screen recording
+  inkscape               # v good
+  sumo                   # traffic jam simulator 2025
+  cheese                 # say
 ]
